@@ -7,15 +7,28 @@
 //
 
 #import "DBTAppDelegate.h"
+#import "DBTTimeRecordsViewController.h"
 
 @implementation DBTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    DBTTimeRecordsViewController *timeRecordsViewController = [[DBTTimeRecordsViewController alloc] init];
+    
+    UINavigationController *navController = [[UINavigationController alloc]
+                                             initWithRootViewController:timeRecordsViewController];
+    
+    self.window.rootViewController = timeRecordsViewController;
+    self.window.rootViewController = navController;
+    
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 

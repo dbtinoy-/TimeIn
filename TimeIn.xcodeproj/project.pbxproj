@@ -19,6 +19,12 @@
 		BD075A8319BF7A9E009904DD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD075A6B19BF7A9E009904DD /* UIKit.framework */; };
 		BD075A8B19BF7A9E009904DD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD075A8919BF7A9E009904DD /* InfoPlist.strings */; };
 		BD075A8D19BF7A9E009904DD /* TimeInTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD075A8C19BF7A9E009904DD /* TimeInTests.m */; };
+		BD075A9819BF7B37009904DD /* DBTTimeRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD075A9719BF7B37009904DD /* DBTTimeRecordsViewController.m */; };
+		BD075A9B19BF7F7B009904DD /* DBTTimeRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = BD075A9A19BF7F7B009904DD /* DBTTimeRecord.m */; };
+		BD075A9E19BF8651009904DD /* DBTTimeRecordStore.m in Sources */ = {isa = PBXBuildFile; fileRef = BD075A9D19BF8651009904DD /* DBTTimeRecordStore.m */; };
+		BD075AA319BF99D3009904DD /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD075AA219BF99D3009904DD /* HeaderView.xib */; };
+		BD075AA719BFA4F4009904DD /* DBTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD075AA519BFA4F4009904DD /* DBTDetailViewController.m */; };
+		BD075AA819BFA4F4009904DD /* DBTDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD075AA619BFA4F4009904DD /* DBTDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,16 @@
 		BD075A8819BF7A9E009904DD /* TimeInTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TimeInTests-Info.plist"; sourceTree = "<group>"; };
 		BD075A8A19BF7A9E009904DD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BD075A8C19BF7A9E009904DD /* TimeInTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeInTests.m; sourceTree = "<group>"; };
+		BD075A9619BF7B37009904DD /* DBTTimeRecordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBTTimeRecordsViewController.h; path = ../DBTTimeRecordsViewController.h; sourceTree = "<group>"; };
+		BD075A9719BF7B37009904DD /* DBTTimeRecordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBTTimeRecordsViewController.m; path = ../DBTTimeRecordsViewController.m; sourceTree = "<group>"; };
+		BD075A9919BF7F7B009904DD /* DBTTimeRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTTimeRecord.h; sourceTree = "<group>"; };
+		BD075A9A19BF7F7B009904DD /* DBTTimeRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTTimeRecord.m; sourceTree = "<group>"; };
+		BD075A9C19BF8651009904DD /* DBTTimeRecordStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTTimeRecordStore.h; sourceTree = "<group>"; };
+		BD075A9D19BF8651009904DD /* DBTTimeRecordStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTTimeRecordStore.m; sourceTree = "<group>"; };
+		BD075AA219BF99D3009904DD /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		BD075AA419BFA4F4009904DD /* DBTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTDetailViewController.h; sourceTree = "<group>"; };
+		BD075AA519BFA4F4009904DD /* DBTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTDetailViewController.m; sourceTree = "<group>"; };
+		BD075AA619BFA4F4009904DD /* DBTDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBTDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +123,11 @@
 		BD075A6D19BF7A9E009904DD /* TimeIn */ = {
 			isa = PBXGroup;
 			children = (
+				BD075AA119BF99A4009904DD /* View */,
+				BD075A9F19BF9866009904DD /* Controller */,
 				BD075A7619BF7A9E009904DD /* DBTAppDelegate.h */,
 				BD075A7719BF7A9E009904DD /* DBTAppDelegate.m */,
+				BD075AA019BF98A6009904DD /* Model */,
 				BD075A7919BF7A9E009904DD /* Images.xcassets */,
 				BD075A6E19BF7A9E009904DD /* Supporting Files */,
 			);
@@ -142,6 +161,37 @@
 				BD075A8919BF7A9E009904DD /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BD075A9F19BF9866009904DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BD075A9619BF7B37009904DD /* DBTTimeRecordsViewController.h */,
+				BD075A9719BF7B37009904DD /* DBTTimeRecordsViewController.m */,
+				BD075AA419BFA4F4009904DD /* DBTDetailViewController.h */,
+				BD075AA519BFA4F4009904DD /* DBTDetailViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BD075AA019BF98A6009904DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BD075A9919BF7F7B009904DD /* DBTTimeRecord.h */,
+				BD075A9A19BF7F7B009904DD /* DBTTimeRecord.m */,
+				BD075A9C19BF8651009904DD /* DBTTimeRecordStore.h */,
+				BD075A9D19BF8651009904DD /* DBTTimeRecordStore.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BD075AA119BF99A4009904DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BD075AA619BFA4F4009904DD /* DBTDetailViewController.xib */,
+				BD075AA219BF99D3009904DD /* HeaderView.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +270,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD075AA819BFA4F4009904DD /* DBTDetailViewController.xib in Resources */,
+				BD075AA319BF99D3009904DD /* HeaderView.xib in Resources */,
 				BD075A7219BF7A9E009904DD /* InfoPlist.strings in Resources */,
 				BD075A7A19BF7A9E009904DD /* Images.xcassets in Resources */,
 			);
@@ -241,7 +293,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD075A7419BF7A9E009904DD /* main.m in Sources */,
+				BD075A9819BF7B37009904DD /* DBTTimeRecordsViewController.m in Sources */,
+				BD075AA719BFA4F4009904DD /* DBTDetailViewController.m in Sources */,
+				BD075A9B19BF7F7B009904DD /* DBTTimeRecord.m in Sources */,
 				BD075A7819BF7A9E009904DD /* DBTAppDelegate.m in Sources */,
+				BD075A9E19BF8651009904DD /* DBTTimeRecordStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
