@@ -18,6 +18,7 @@
 + (instancetype) sharedStore;
 
 - (DBTTimeRecord *)createTimeRecord;
+- (DBTTimeRecord *)createTimeRecordWithTimeOut;
 - (void)removeTimeRecord:(DBTTimeRecord *)timeRecord;
-
+- (void)stopTimeRecord:(DBTTimeRecord *)timeRecord;
 @end

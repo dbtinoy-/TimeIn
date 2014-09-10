@@ -13,18 +13,24 @@
     NSDate *_timeIn;
     NSDate *_timeOut;
     NSDate *_dateCreated;
+    NSTimeInterval _workingTime;
 
 }
 + (instancetype) createTimeRecord;
 
 - (instancetype) init;
++ (instancetype) createTimeRecordWithTimeOut;
 
+- (instancetype) initWithTimeOut;
 
 - (void) setTimeIn:(NSDate *)date;
-- (NSString *)timeIn;
+- (NSDate *)timeIn;
 
 - (void) setTimeOut:(NSDate *)date;
-- (NSString *)timeOut;
+- (NSDate *)timeOut;
+
+- (void) setWorkingTime:(NSTimeInterval)timeInterval;
+- (NSTimeInterval)workingTime;
 
 - (NSDate *) dateCreated;
 

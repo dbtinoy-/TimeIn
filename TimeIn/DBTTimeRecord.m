@@ -26,7 +26,21 @@
     }
     return self;
 }
++ (instancetype) createTimeRecordWithTimeOut
+{
+    DBTTimeRecord *newTimeRecord = [[self alloc] initWithTimeOut];
+    
+    return newTimeRecord;
+}
 
+- (instancetype) initWithTimeOut
+{
+    self = [self init];
+    if (self) {
+        _timeOut = [[NSDate alloc] init];
+    }
+    return self;
+}
 - (void) setTimeIn:(NSDate *)date
 {
     _timeIn = date;
@@ -42,11 +56,19 @@
     _timeOut = date;
 }
 
-
-
 - (NSDate *) timeOut
 {
     return _timeOut;
+}
+
+- (void) setWorkingTime:(NSTimeInterval)timeInterval
+{
+    _workingTime = timeInterval;
+}
+
+- (NSTimeInterval) workingTime
+{
+    return _workingTime;
 }
 
 - (NSDate *)dateCreated

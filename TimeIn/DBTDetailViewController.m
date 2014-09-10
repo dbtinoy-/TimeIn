@@ -27,10 +27,18 @@
     [super viewWillAppear:animated];
     
     DBTTimeRecord *timeRecord = self.timeRecord;
-    
 
-    self.timeInField = timeRecord.timeIn;
-    self.timeOutField = timeRecord.timeOut;
+    self.timeInField.date = timeRecord.timeIn;
+    
+    
+    if(timeRecord.timeOut != nil)
+    {
+        self.timeOutField.date = timeRecord.timeOut;
+    } else
+    {
+        [self.timeOutLabel removeFromSuperview];
+        [self.timeOutField removeFromSuperview];
+    }
     
     NSDate *dateCreated = [timeRecord dateCreated];
     
@@ -42,4 +50,20 @@
     
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // Clear first responder
+    [self.view endEditing:YES];
+    
+    DBTTimeRecord *timeRecord = self.timeRecord;
+    timeRecord.timeIn = self.timeInField.date;
+    
+    if(self.timeOutField.date != nil)
+    {
+       timeRecord.timeOut = self.timeOutField.date;
+    }
+    
+}
 @end

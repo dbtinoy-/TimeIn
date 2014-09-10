@@ -19,6 +19,7 @@
 
 @implementation DBTTimeRecordsViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -30,17 +31,44 @@
     [self.tableView setTableHeaderView:header];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
+}
+
 - (instancetype) init
 {
     self = [super initWithStyle:UITableViewStylePlain];
     
     if(self) {
-
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"TimeIn Records";
     }
     
     return self;
 }
-
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil
+                         bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil
+                           bundle:nibBundleOrNil];
+    if (self) {
+        
+        // Set the tab bar item's title
+        self.tabBarItem.title = @"Records";
+        
+        //        // Create a UIImage from a file
+        //        // This will use Hypno@2x.png on retina display devices
+        //        UIImage *i = [UIImage imageNamed:@"Hypno.png"];
+        //
+        //        // Put that image on the tab bar item
+        //        self.tabBarItem.image = i;
+    }
+    
+    return self;
+}
 - (UIView *)headerView
 {
     if (!_headerView) {
@@ -89,13 +117,13 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath
     NSArray *timeRecords = [[DBTTimeRecordStore sharedStore] allTimeRecords];
     DBTTimeRecord *timeRecord = timeRecords[indexPath.row];
     
-    NSDate *dateCreated = [timeRecord dateCreated];
+    NSDate *timeIn = [timeRecord timeIn];
     
     
     NSDateFormatter *formatter = nil;
 	formatter = [[NSDateFormatter alloc] init];
-	[formatter setDateFormat:@"' 'EE MMM d, yyyy h:mm a' '"];
-	[cell.textLabel setText:[formatter stringFromDate:dateCreated]];
+	[formatter setDateFormat:@"' 'EE MMM d, yyyy h:mm:s a' '"];
+	[cell.textLabel setText:[formatter stringFromDate:timeIn]];
     
     return cell;
 }
@@ -119,12 +147,12 @@ cellForRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (IBAction)addNewTimeRecord:(id)sender
 {
-    DBTTimeRecord *newTimeRecord = [[DBTTimeRecordStore sharedStore] createTimeRecord];
+    DBTTimeRecord *newTimeRecord = [[DBTTimeRecordStore sharedStore] createTimeRecordWithTimeOut];
     
     NSInteger lastRow = [[[DBTTimeRecordStore sharedStore] allTimeRecords] indexOfObject:newTimeRecord];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationTop];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (IBAction)toggleEditingMode:(id)sender

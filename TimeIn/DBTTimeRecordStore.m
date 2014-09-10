@@ -62,9 +62,26 @@
     
     return timeRecord;
 }
-
+- (DBTTimeRecord *) createTimeRecordWithTimeOut
+{
+    DBTTimeRecord *timeRecord = [DBTTimeRecord createTimeRecordWithTimeOut];
+    
+    [self.privateTimeRecords addObject:timeRecord];
+    
+    return timeRecord;
+}
 - (void)removeTimeRecord:(DBTTimeRecord *)timeRecord
 {
     [self.privateTimeRecords removeObjectIdenticalTo:timeRecord];
+}
+
+- (void)stopTimeRecord:(DBTTimeRecord *)timeRecord
+{
+    NSDate *date = [NSDate date] ;
+    NSTimeInterval workingHours = fabs([date timeIntervalSinceDate:timeRecord.timeIn]);
+    
+    timeRecord.timeOut = date;
+    timeRecord.workingTime = workingHours;
+    
 }
 @end

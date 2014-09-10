@@ -25,6 +25,8 @@
 		BD075AA319BF99D3009904DD /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD075AA219BF99D3009904DD /* HeaderView.xib */; };
 		BD075AA719BFA4F4009904DD /* DBTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD075AA519BFA4F4009904DD /* DBTDetailViewController.m */; };
 		BD075AA819BFA4F4009904DD /* DBTDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD075AA619BFA4F4009904DD /* DBTDetailViewController.xib */; };
+		BD075AB119C01A31009904DD /* DBTStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD075AB019C01A31009904DD /* DBTStatusViewController.m */; };
+		BD075AB419C01C61009904DD /* DBTStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = BD075AB319C01C61009904DD /* DBTStatusView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,12 @@
 		BD075AA419BFA4F4009904DD /* DBTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTDetailViewController.h; sourceTree = "<group>"; };
 		BD075AA519BFA4F4009904DD /* DBTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTDetailViewController.m; sourceTree = "<group>"; };
 		BD075AA619BFA4F4009904DD /* DBTDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DBTDetailViewController.xib; sourceTree = "<group>"; };
+		BD075AAF19C01A31009904DD /* DBTStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTStatusViewController.h; sourceTree = "<group>"; };
+		BD075AB019C01A31009904DD /* DBTStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTStatusViewController.m; sourceTree = "<group>"; };
+		BD075AB219C01C61009904DD /* DBTStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTStatusView.h; sourceTree = "<group>"; };
+		BD075AB319C01C61009904DD /* DBTStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTStatusView.m; sourceTree = "<group>"; };
+		BD075ABA19C044E5009904DD /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		BD075ABB19C0454D009904DD /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,7 @@
 		BD075A6D19BF7A9E009904DD /* TimeIn */ = {
 			isa = PBXGroup;
 			children = (
+				BD075AB919C044D3009904DD /* Classes */,
 				BD075AA119BF99A4009904DD /* View */,
 				BD075A9F19BF9866009904DD /* Controller */,
 				BD075A7619BF7A9E009904DD /* DBTAppDelegate.h */,
@@ -170,6 +179,8 @@
 				BD075A9719BF7B37009904DD /* DBTTimeRecordsViewController.m */,
 				BD075AA419BFA4F4009904DD /* DBTDetailViewController.h */,
 				BD075AA519BFA4F4009904DD /* DBTDetailViewController.m */,
+				BD075AAF19C01A31009904DD /* DBTStatusViewController.h */,
+				BD075AB019C01A31009904DD /* DBTStatusViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -188,10 +199,21 @@
 		BD075AA119BF99A4009904DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BD075AB219C01C61009904DD /* DBTStatusView.h */,
+				BD075AB319C01C61009904DD /* DBTStatusView.m */,
 				BD075AA619BFA4F4009904DD /* DBTDetailViewController.xib */,
 				BD075AA219BF99D3009904DD /* HeaderView.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		BD075AB919C044D3009904DD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BD075ABA19C044E5009904DD /* Constants.h */,
+				BD075ABB19C0454D009904DD /* Macros.h */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +315,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD075A7419BF7A9E009904DD /* main.m in Sources */,
+				BD075AB419C01C61009904DD /* DBTStatusView.m in Sources */,
+				BD075AB119C01A31009904DD /* DBTStatusViewController.m in Sources */,
 				BD075A9819BF7B37009904DD /* DBTTimeRecordsViewController.m in Sources */,
 				BD075AA719BFA4F4009904DD /* DBTDetailViewController.m in Sources */,
 				BD075A9B19BF7F7B009904DD /* DBTTimeRecord.m in Sources */,

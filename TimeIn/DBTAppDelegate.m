@@ -8,6 +8,7 @@
 
 #import "DBTAppDelegate.h"
 #import "DBTTimeRecordsViewController.h"
+#import "DBTStatusViewController.h"
 
 @implementation DBTAppDelegate
 
@@ -15,14 +16,28 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    DBTTimeRecordsViewController *timeRecordsViewController = [[DBTTimeRecordsViewController alloc] init];
+//    DBTTimeRecordsViewController *timeRecordsViewController = [[DBTTimeRecordsViewController alloc] init];
+//    
+//    UINavigationController *navController = [[UINavigationController alloc]
+//                                             initWithRootViewController:timeRecordsViewController];
+//    
+//    self.window.rootViewController = timeRecordsViewController;
+//    self.window.rootViewController = navController;
+    
+
+    DBTStatusViewController *svc = [[DBTStatusViewController alloc] init];
+    
+    DBTTimeRecordsViewController *tvc = [[DBTTimeRecordsViewController alloc] init];
     
     UINavigationController *navController = [[UINavigationController alloc]
-                                             initWithRootViewController:timeRecordsViewController];
+                                                 initWithRootViewController:tvc];
     
-    self.window.rootViewController = timeRecordsViewController;
-    self.window.rootViewController = navController;
+    navController.title = tvc.tabBarItem.title;
+  
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = @[svc, navController];
     
+    self.window.rootViewController = tabBarController;
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
